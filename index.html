@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Peygamber Kıssaları</title>
+<meta name="description" content="Nine, Elif ve Ali'yle sekiz peygamber kıssası: çocuklar için kısa çizgi filmler.">
+<meta property="og:title" content="Peygamber Kıssaları">
+<meta property="og:description" content="Nine, Elif ve Ali'yle sekiz peygamber kıssası: çocuklar için kısa çizgi filmler.">
+<meta property="og:image" content="https://raufenc.github.io/peygamber-kissalari/kapak/01_Nuh_Gemi.jpg">
+<meta property="og:url" content="https://raufenc.github.io/peygamber-kissalari/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#eef2f7; --panel:#ffffff; --ink:#1d2433; --soft:#5b6578; --line:#d5dce7;
+  --gold:#b9771a; --gold-bg:#fbefd9; --night:#24314d;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#121827; --panel:#1b2336; --ink:#eef1f7; --soft:#a5afc3; --line:#2c3650;
+  --gold:#f0b54f; --gold-bg:#3a2f1c; --night:#0d1220; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);
+  padding:28px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:860px;margin:0 auto;display:grid;gap:26px}
+header{display:grid;gap:8px}
+.ust{font:700 13px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+h1{font:800 clamp(34px,7vw,52px)/1.05 var(--display);margin:0}
+header p{margin:0;color:var(--soft);max-width:62ch}
+.paylas{justify-self:start;font:700 15px/1 var(--body);border:0;border-radius:999px;padding:11px 18px;background:var(--night);color:#fff;cursor:pointer}
+.paylas:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.liste{display:grid;gap:22px}
+article{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;scroll-margin-top:16px}
+video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.bilgi{display:grid;gap:8px;padding:16px 20px 20px}
+.bas{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.no{font:800 15px/1 var(--display);color:var(--gold)}
+h2{font:800 24px/1.15 var(--display);margin:0}
+h2 small{font:600 17px var(--body);color:var(--soft);margin-left:6px}
+.sure{margin-left:auto;font:600 14px var(--body);color:var(--soft);font-variant-numeric:tabular-nums}
+.hisse{margin:0;padding:10px 14px;border-radius:10px;background:var(--gold-bg);font-weight:600}
+.hisse span{display:block;font-weight:400;color:var(--soft)}
+footer{color:var(--soft);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="ust">Nine, Elif ve Ali anlatıyor</div>
+    <h1>Peygamber Kıssaları</h1>
+    <p>Evde yaşanan küçük bir olay, Nine'nin anlattığı bir peygamber kıssasıyla buluşuyor. Sekiz kısa çizgi film; her birinin sonunda bir kıssadan hisse var. İzlemek için filme dokunun.</p>
+    <button class="paylas" id="paylas" type="button">Bağlantıyı paylaş</button>
+  </header>
+  <main class="liste" id="liste"></main>
+  <footer>Peygamber Kıssaları · Nine, Elif ve Ali</footer>
+</div>
+<script>
+const B = [
+ {no:1,ad:"Nûh aleyhisselâm",alt:"Gemi",k:"01_Nuh_Gemi",y:"4:54",h:["Doğruyu yaparken gülen olabilir.","Sen çekici bırakma."]},
+ {no:2,ad:"Hûd aleyhisselâm",alt:"Kuleler",k:"02_Hud_Kuleler",y:"3:48",h:["Güç Allah’ındır.","Sen şükret, kibirlenme."]},
+ {no:3,ad:"Sâlih aleyhisselâm",alt:"Deve",k:"03_Salih_Deve",y:"4:14",h:["Nimette herkesin hakkı var.","Sıranı bil, hakkı gözet."]},
+ {no:4,ad:"İbrâhim aleyhisselâm",alt:"Ateş",k:"04_Ibrahim_Ates",y:"3:58",h:["Herkes yapıyor diye yanlış doğru olmaz.","Sen doğrudan şaşma."]},
+ {no:5,ad:"Eyyûb aleyhisselâm",alt:"Sabır",k:"05_Eyyub_Sabir",y:"2:59",h:["Dert gelince isyan etme.","Sabret, dua et, şükret."]},
+ {no:6,ad:"Şuayb aleyhisselâm",alt:"Terazi",k:"06_Suayb_Terazi",y:"3:21",h:["Ölçüde, tartıda hile olmaz.","Hakkı tam ver, dürüst ol."]},
+ {no:7,ad:"Süleymân aleyhisselâm",alt:"Karınca",k:"07_Suleyman_Karinca",y:"2:45",h:["Küçük deme, ezme.","Güçlü olan korur ve şükreder."]},
+ {no:8,ad:"Yûnus aleyhisselâm",alt:"Balık",k:"08_Yunus_Balik",y:"3:26",h:["Karanlıkta bile Allah seni duyar.","Dua et, ümidini kesme."]},
+];
+const liste = document.getElementById("liste");
+for (const b of B){
+  const a = document.createElement("article"); a.id = "b" + b.no;
+  const v = document.createElement("video");
+  v.controls = true; v.preload = "none"; v.playsInline = true;
+  v.src = "video/" + b.k + ".mp4"; v.poster = "kapak/" + b.k + ".jpg";
+  v.addEventListener("play", () => document.querySelectorAll("video").forEach(o => { if (o !== v) o.pause(); }));
+  const i = document.createElement("div"); i.className = "bilgi";
+  i.innerHTML = `<div class="bas"><span class="no">${String(b.no).padStart(2,"0")}</span>
+    <h2>${b.ad}<small>${b.alt}</small></h2><span class="sure">${b.y}</span></div>
+    <p class="hisse">${b.h[0]}<span>${b.h[1]}</span></p>`;
+  a.append(v, i); liste.append(a);
+}
+const btn = document.getElementById("paylas");
+btn.addEventListener("click", async () => {
+  const url = location.href.split("#")[0];
+  try {
+    if (navigator.share) { await navigator.share({title: "Peygamber Kıssaları", url}); return; }
+    await navigator.clipboard.writeText(url); btn.textContent = "Bağlantı kopyalandı";
+  } catch (e) { btn.textContent = url; }
+});
+</script>
+</body>
+</html>
